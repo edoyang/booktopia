@@ -1,0 +1,217 @@
+:root{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+    /* VARIABLE SET */
+
+    --padding-sm: .5rem;
+    --padding: 1rem;
+    --padding-lg: 2rem;
+
+    --gray: #EAEAEA;
+    --yellow: #FFCE1A;
+    --white: #FFFFFF;
+}
+
+html, body, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body > *{
+    padding: var(--padding);
+}
+
+/* HEADER */
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* NAV */
+
+header nav{
+    display: flex;
+    gap: 5rem;
+}
+
+header nav .navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--padding);
+}
+
+header nav .navigation > img{
+    z-index: 2;
+    position: relative;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+}
+
+header nav .navigation-list{
+    height: 100vh;
+    width: 15vw;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color: teal;
+}
+
+header nav .navigation-list ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--padding);
+}
+
+header nav .navigation-list li{
+    list-style: none;
+
+}
+
+/* SEARCH */
+
+header .search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--padding-sm);
+    border-radius: 4px;
+    background-color: var(--gray);
+    padding: 12px var(--padding);
+}
+
+header .search input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+/* USER */
+
+header .user-navigation{
+    display: flex;
+    gap: var(--padding);
+    align-items: center;
+}
+
+header .user-navigation .user{
+    position: relative;
+}
+
+header .user-navigation .user .user-menu{
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    list-style: none;
+    gap: var(--padding);
+}
+
+header .user-navigation .user .user-menu li{
+    display: none;
+}
+
+/* CART */
+
+header .user-navigation .cart{
+    padding: 10px var(--padding);
+}
+
+
+
+/* HOMEPAGE */
+
+/* HERO */
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: var(--padding-lg);
+}
+
+.hero .left .book-detail{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 1000px;
+    text-wrap: balance;
+}
+
+.book-detail .book-title{
+    font-size: 50px;
+}
+
+.hero .right{
+    display: flex;
+    position: relative;
+    min-width: 420px;
+    height: 400px;
+}
+
+.hero .right > img{
+    width: 250px;
+    height: 400px;
+    position: absolute;
+    border-radius: 4px;
+}
+
+.hero .right :nth-child(1){
+    scale: 1;
+    z-index: 0;
+    right: 40%;
+}
+
+.hero .right :nth-child(2){
+    scale: 0.9;
+    z-index: -1;
+    right: 15%;
+}
+
+.hero .right :nth-child(3){
+    scale: 0.85;
+    z-index: -2;
+    right: -20px;
+}
+
+
+/* IMPORTANT */
+
+.none{
+    display: none;
+}
+
+.flex{
+    display: flex;
+}
+
+.btn-primary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--padding-lg);
+    background-color: var(--yellow);
+    text-align: center;
+    color: var(--white);
+    padding: 10px var(--padding-lg);
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}

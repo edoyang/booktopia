@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booktopia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div class="navigation">
+                <img src="assets/nav.svg" alt="nav">
+                <div class="navigation-list none">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Books</a></li>
+                        <li><a href="#">Authors</a></li>
+                        <li><a href="#">Genres</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <label for="search" class="search">
+                <img src="assets/search.svg" width="20px" height="20px" alt="search-button">
+                <input autocomplete="off" name="search" id="search" type="text" placeholder="What are you looking for ?">
+            </label>
+        </nav>
+
+        <div class="user-navigation">
+            <div class="user">
+                <img src="assets/user.svg" alt="user">
+                <ul class="user-menu flex">
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+
+            <a href="#"><img src="assets/wishlist.svg" width="22px" height="22px" alt="wishlist"></a>
+
+            <div class="btn-primary cart">
+                <img src="assets/cart.svg" alt="cart">
+                <span>0</span>
+
+                <div class="cart-menu none">
+                    <ul>
+                        <li><a href="#">Book 1</a></li>
+                        <li><a href="#">Book 2</a></li>
+                        <li><a href="#">Book 3</a></li>
+                        <li><a href="#">Book 4</a></li>
+                        <li><a href="#">Book 5</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="left">
+            <div class="book-detail">
+                <h1 class="book-title">I WANT A BETTER CATASTROPHE</h1>
+                <p class="book-description">It's time to update your reading list with some of the latest and greatest releases in the literary world. From heart-pumping thrillers to captivating memoirs, this week's new releases offer something for everyone</p>
+            </div>
+
+            <button class="btn-primary">Add to cart $55</button>
+        </div>
+
+        <div class="right">
+            <img draggable="false" src="assets/book1.jpg" alt="book-1">
+            <img draggable="false" src="assets/book2.jpg" alt="book-2">
+            <img draggable="false" src="assets/book3.jpg" alt="book-3">
+        </div>
+    </section>
+    
+</body>
+</html>
