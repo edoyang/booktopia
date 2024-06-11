@@ -33,6 +33,10 @@ header nav .navigation-list{
     background-color: var(--white);
 }
 
+header nav .navigation-list .menu{
+    height: 100%;
+}
+
 header nav .navigation-list ul{
     display: flex;
     flex-direction: column;

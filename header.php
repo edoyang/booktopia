@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="/wordpress/wp-content/themes/booktopia/assets/images/favicon" type="image/x-icon">
 
     <?php 
@@ -29,7 +28,7 @@
                             'menu' => 'primary',
                             'theme_location' => 'primary',
                             'container' => '',
-                            'items_wrap' => '<ul id="" class="">%3$s</ul>'
+                            'items_wrap' => '<ul class="menu">%3$s</ul>'
                         )
                     );
                     ?>
