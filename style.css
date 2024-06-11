@@ -1,3 +1,13 @@
+/* 
+Theme Name: Booktopia
+Text Domain: Booktopia
+Version 1.0
+Description: A simple book store website
+Tags: book, store, website
+Author: Edo Yang
+Author URI: https://edoyangz.wordpress.com
+*/
+
 :root{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -11,6 +21,7 @@
     --gray: #EAEAEA;
     --yellow: #FFCE1A;
     --white: #FFFFFF;
+    --black: #000000;
 }
 
 html, body, * {
@@ -22,112 +33,6 @@ html, body, * {
 body > *{
     padding: var(--padding);
 }
-
-/* HEADER */
-
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* NAV */
-
-header nav{
-    display: flex;
-    gap: 5rem;
-}
-
-header nav .navigation{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--padding);
-}
-
-header nav .navigation > img{
-    z-index: 2;
-    position: relative;
-    cursor: pointer;
-    height: 25px;
-    width: 25px;
-}
-
-header nav .navigation-list{
-    height: 100vh;
-    width: 15vw;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    background-color: teal;
-}
-
-header nav .navigation-list ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--padding);
-}
-
-header nav .navigation-list li{
-    list-style: none;
-
-}
-
-/* SEARCH */
-
-header .search{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--padding-sm);
-    border-radius: 4px;
-    background-color: var(--gray);
-    padding: 12px var(--padding);
-}
-
-header .search input{
-    background-color: transparent;
-    border: none;
-    outline: none;
-}
-
-/* USER */
-
-header .user-navigation{
-    display: flex;
-    gap: var(--padding);
-    align-items: center;
-}
-
-header .user-navigation .user{
-    position: relative;
-}
-
-header .user-navigation .user .user-menu{
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    list-style: none;
-    gap: var(--padding);
-}
-
-header .user-navigation .user .user-menu li{
-    display: none;
-}
-
-/* CART */
-
-header .user-navigation .cart{
-    padding: 10px var(--padding);
-}
-
 
 
 /* HOMEPAGE */
@@ -159,36 +64,130 @@ header .user-navigation .cart{
     font-size: 50px;
 }
 
-.hero .right{
-    display: flex;
+.card-slider {
+    width: 100%;
+    overflow: hidden; /* Prevents content from spilling outside the container */
     position: relative;
-    min-width: 420px;
-    height: 400px;
+    height: 400px; /* Adjust based on card height */
 }
 
-.hero .right > img{
-    width: 250px;
-    height: 400px;
-    position: absolute;
+.card-slider-items {
+    display: flex;
+    position: relative;
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+.card {
+    position: relative;
+    width: 250px; /* Width of each card */
+    height: 400px; /* Height of each card */
+    margin-right: -180px; /* Overlap cards */
+    transition: transform 0.5s ease; /* Smooth scale transition */
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 4px;
 }
 
-.hero .right :nth-child(1){
-    scale: 1;
-    z-index: 0;
-    right: 40%;
+.card:first-child {
+    transform: scale(1);
+    z-index: 3;
 }
 
-.hero .right :nth-child(2){
-    scale: 0.9;
-    z-index: -1;
-    right: 15%;
+.card:nth-child(2) {
+    transform: scale(0.9);
+    z-index: 2;
 }
 
-.hero .right :nth-child(3){
-    scale: 0.85;
-    z-index: -2;
-    right: -20px;
+.card:nth-child(3) {
+    transform: scale(0.85);
+    z-index: 1;
+}
+
+.card:nth-child(n + 4) {
+    display: none;
+}
+
+
+
+/* TOP SELLER */
+
+.top-seller{
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-lg);
+}
+
+.top-seller .dropdown{
+    display: flex;
+    gap: var(--padding-lg);
+    background-color: var(--gray);
+    padding: var(--padding-sm) var(--padding);
+    border-radius: 4px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    width: 200px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.top-seller .dropdown .dropdown-option{
+    position: absolute;
+    top: 91%;
+    left: 0;
+    background-color: var(--gray);
+    border-radius:0 0 4px 4px;
+    flex-direction: column;
+    width: 200px;
+}
+
+.top-seller .dropdown .dropdown-option a{
+    list-style: none;
+    color: var(--black);
+    text-decoration: none;
+    width: 100%;
+    padding: var(--padding-sm) calc(var(--padding) - 3px);
+    border: 3px solid transparent;
+}
+
+.top-seller .dropdown .dropdown-option a:hover{
+    border-left: 3px solid var(--yellow);
+}
+
+.top-seller .slider{
+    display: flex;
+    overflow-x: scroll;
+    gap: var(--padding);
+}
+
+.top-seller .slider .book{
+    display: flex;
+    gap: var(--padding);
+}
+
+.book .image-container img{
+    width: 200px;
+    height: 320x;
+    border-radius: 4px;
+}
+
+.book > .book-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--padding);
+}
+
+.book > .book-detail .btn-primary {
+    width: 150px;
+    gap: var(--padding-sm);
+    white-space: nowrap;
 }
 
 

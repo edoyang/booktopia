@@ -1,0 +1,97 @@
+<section class="hero">
+        <div class="left">
+            <div class="book-detail">
+                <h1 class="book-title">I WANT A BETTER CATASTROPHE</h1>
+                <p class="book-description">It's time to update your reading list with some of the latest and greatest releases in the literary world. From heart-pumping thrillers to captivating memoirs, this week's new releases offer something for everyone</p>
+            </div>
+
+            <button class="btn-primary"> <img src="wp-content/themes/booktopia/assets/images/cart.svg" alt="cart"> Add to Cart</button>
+        </div>
+
+        <div class="right" id="bookScroller">
+            <img draggable="false" src="wp-content/themes/booktopia/assets/images/book1.jpg" alt="book-1">
+            <img draggable="false" src="wp-content/themes/booktopia/assets/images/book2.jpg" alt="book-2">
+            <img draggable="false" src="wp-content/themes/booktopia/assets/images/book3.jpg" alt="book-3">
+            <img draggable="false" src="wp-content/themes/booktopia/assets/images/book4.jpg" alt="book-4" class="hidden">
+            <img draggable="false" src="wp-content/themes/booktopia/assets/images/book5.jpg" alt="book-5" class="hidden">
+            <img draggable="false" src="wp-content/themes/booktopia/assets/images/book6.jpg" alt="book-6" class="hidden">
+            <img draggable="false" src="wp-content/themes/booktopia/assets/images/book7.jpg" alt="book-7" class="hidden">
+            <img draggable="false" src="wp-content/themes/booktopia/assets/images/book8.jpg" alt="book-8" class="hidden">
+            <img draggable="false" src="wp-content/themes/booktopia/assets/images/book9.jpg" alt="book-9" class="hidden">
+            <img draggable="false" src="wp-content/themes/booktopia/assets/images/book10.jpg" alt="book-10" class="hidden">
+        </div>
+        
+    </section>
+    
+    <section class="top-seller">
+        <h1>Top Sellers</h1>
+        <div class="dropdown toggle-button" data-target="dropdown-option">
+            <p>Choose Genre</p>
+            <img src="wp-content/themes/booktopia/assets/images/caret.svg" alt="caret">
+            
+            <ul class="dropdown-option none">
+                <a href="#">Fiction</a>
+                <a href="#">Non-Fiction</a>
+                <a href="#">Romance</a>
+                <a href="#">Mystery</a>
+                <a href="#">Thriller</a>
+            </div>
+        </div>
+
+        <div class="slider">
+            <div class="book">
+                <div class="image-container">
+                    <img src="wp-content/themes/booktopia/assets/images/book1.jpg" alt="book-1">
+                </div>
+                <div class="book-detail">             
+                    <h3>I Want a Better Catastrophe</h3>
+                    <p>With global warming projected to rocket past the...</p>
+                    <p>$ 55</p>
+                    <button class="btn-primary"> <img src="wp-content/themes/booktopia/assets/images/cart.svg" alt="cart"> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="book">
+                <div class="image-container">
+                    <img src="wp-content/themes/booktopia/assets/images/book2.jpg" alt="book-2">
+                </div>
+                <div class="book-detail">             
+                    <h3>Find a sponsor</h3>
+                    <p>In this powerful yet practical book, economist and...</p>
+                    <div class="price">
+                        <p>$ 55</p>
+                    </div>
+                    <button class="btn-primary"> <img src="wp-content/themes/booktopia/assets/images/cart.svg" alt="cart"> Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="book">
+                <div class="image-container">
+                    <img src="wp-content/themes/booktopia/assets/images/book3.jpg" alt="book-3">
+                </div>
+                <div class="book-detail">             
+                    <h3>The Time Has Come</h3>
+                    <p>Lindbergh's Pharmacy is an Athens, Georgia, institution...</p>
+                    <div class="price">
+                        <p>$ 55</p>
+                    </div>
+                    <button class="btn-primary"> <img src="wp-content/themes/booktopia/assets/images/cart.svg" alt="cart"> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <?php
+if(have_posts()){
+    while(have_posts()){
+        the_post();
+?>
+<div class="post">
+    <h2 class="page-title"><?php the_title(); ?></h2>
+    <p><?php the_content(); ?></p>
+</div>
+        <?php
+    }
+}
+?>

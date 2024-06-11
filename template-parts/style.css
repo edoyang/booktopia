@@ -1,0 +1,46 @@
+.slider {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    height: 300px; /* Fixed height */
+}
+
+.slider-item {
+    flex: 0 0 100%; /* Take full width of the slider */
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    position: absolute;
+    width: 440px;
+    height: 300px;
+    opacity: 0; /* Initially hidden */
+}
+
+.slider-item.active {
+    opacity: 1; /* Show active item */
+    transform: translateX(0);
+}
+
+.slider-item img{
+    height: 100%;
+    object-fit: cover;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    background-color: #fff; /* Visible against images */
+    border: none;
+    cursor: pointer;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
